@@ -1,0 +1,92 @@
+---
+title: "Factorials"
+author: "Fred Boehm"
+date: "10/22/2021"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Definition 
+
+In Mathcounts, we routinely use factorials. A factorial is written as a positive integer followed by an exclamation point. For example $5!$ is read as "five factorial". 
+
+To compute a factorial for a positive integer $n$, follow the formula:
+
+$$n! = n * (n-1) * \ldots * 2 * 1$$
+
+Note that the "..." denotes all of the whole numbers between $n-2$ and $3$. 
+
+## Calculation Examples
+
+$$5! = 5 * 4*3*2*1 = 120$$
+Similarly, $$6! = 6 * 5*4*3*2*1 = 6 * 5! = 720$$ 
+
+
+
+
+## Why do we care about factorials?
+
+Factorials allow us to count the number of arrangements of objects. For example, consider the case 
+where three friends want to go to a concert. They buy three tickets. How many arrangements of the \
+three friends, Billy, Jane, and Callie, are possible? 
+
+One approach is to list the possibilities.
+
+1. Billy, Jane, Callie
+2. Billy, Callie, Jane
+3. Jane, Billy, Callie
+4. Jane, Callie, Billy
+5. Callie, Jane, Billy
+6. Callie, Billy, Jane
+
+
+Because there are only three people, the list of arrangements has a modest size. You can 
+imagine that when more people are seated together, there are many more ways to arrange them. 
+
+Another approach begins by recognizing that there are three seats, labeled 1, 2, 3, say, from left to 
+right. 
+
+In the above list of six arrangements for Billy, Jane, and Callie, we'll assume that the leftmost 
+person is in seat 1, the middle person is in seat 2, and the last is in seat 3. 
+
+Consider assigning, one at a time, people to the three seats. 
+
+For the first seat, you must choose one of the three people and assign them to seat 1. 
+Once that first choice is made, there remain two people who can be assigned to seat 2. After making the second assignment, there remains one person who, by default, is assigned to seat 3. 
+
+Multiplying the number of options at each decision point, we see that there are:
+
+$3 * 2 * 1 = 6 = 3!$ ways to arrange the three people. Notice that this approach gives the same answer 
+as the "list" approach above. 
+
+It turns out that the second approach, where we count the number of options available at each 
+position and multiply, can easily accommodate larger group sizes. 
+
+Consider the case where 5 friends go to the concert together and they all sit in the same row. 
+
+For the first seat, there are 5 possibilities; for the second seat, there are 4 (since one person was chosen to sit in seat 1). Extending this pattern, we see that there are 3,2, and 1 possibilities for the remaining three seats. 
+
+We multiply these possibilities together to get $5 * 4* 3 * 2* 1= 120 = 5!$. 
+
+Please email me with questions that arise while thinking about this handout.
+
+
+## Resources
+
+The [wikipedia article](https://en.wikipedia.org/wiki/Factorial) has an advanced discussion of factorials. You may want to read parts of it. They also list many references at the end of the article. 
+
+
+
+
+
+
+## Git info
+
+```{r} 
+git2r::last_commit()
+```
+
+
