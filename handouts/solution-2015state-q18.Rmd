@@ -1,0 +1,69 @@
+---
+title: "2015 State competition, Question 18"
+author: "Fred Boehm"
+date: "11/08/2021"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Problem statement 
+The quadratic equation $$x^2+ px + 2p = 0$$ has solutions $x = a$ and $x = b$. If the
+
+quadratic equation $$x^2+ cx + d = 0$$
+
+ has solutions $x = a + 2$ and $x = b + 2$, what is the value of $d$?
+
+
+## Approach
+
+We'll rely on factorization of quadratics to solve this. 
+
+First, note that we're given the two solutions to the first equation, $a$ and $b$. This tells us that:
+
+$$(x - a)(x-b) = 0 = x^2+ px + 2p$$
+We can expand the left-hand side to get:
+
+$$(x-a)(x-b) = x^2 - (a + b)x + ab = x^2 + px + 2p$$
+For the two sides of the equation to be equal, their coefficients for the $x$ terms must be equal. 
+
+That is, we must have $$-(a + b) = p$$ and $$ab = 2p$$
+
+From these two equations, we see that:
+
+$$-2(a + b) = 2p = ab$$
+
+Using "guess and check", notice that $a = 2$ and $b = -1$ is one solution to the above equation.
+
+
+We're also given the two solutions to the second equation, $a + 2$ and $b + 2$. 
+
+$$(x - (a + 2))(x - (b + 2)) = 0 = x^2+ cx + d$$
+Using the same approach, ie, matching the coefficients of the powers of $x$, we see that
+
+$$(a + 2)(b + 2) = d$$
+
+Plug in the values of $a$ and $b$ that solved the first quadratic equation to get:
+
+$$d = (2 + 2)(-1 + 2) = 4$$
+
+
+
+
+## Resources
+
+
+
+
+
+
+
+## Git info
+
+```{r} 
+git2r::last_commit()
+```
+
+
